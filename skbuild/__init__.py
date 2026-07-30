@@ -9,7 +9,10 @@ from __future__ import annotations
 
 from scikit_build_core.setuptools.wrapper import setup
 
-from ._version import version as __version__
+try:
+    from ._version import version as __version__
+except ImportError:  # pragma: no cover
+    __version__ = "0.0.0.dev0"
 
 __author__ = "The scikit-build team"
 __email__ = "scikit-build@googlegroups.com"
